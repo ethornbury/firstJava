@@ -1,6 +1,7 @@
 /*
 Game1.java
-@author ET?
+@author ET!
+
 @date   Nov 2014
 @desc the instantiable class of rock paper scissors game
 
