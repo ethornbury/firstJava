@@ -3,7 +3,7 @@ GameApp.java
 @author ET
 @date   Nov 2014
 @desc the main class of rock paper scissors game
-
+github
 */
 GameApp{
 main method{
