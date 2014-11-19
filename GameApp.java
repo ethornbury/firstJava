@@ -17,9 +17,10 @@ main method{
 			
 			Scanner info()
 			play games()
-			
+			create array of stats()
 		}
-		get overall result()
+		get overall game stats()
+		loop to traverse the array and display stats
 		print result()
 	}
 	not valid answer
