@@ -1,5 +1,5 @@
 /*
-*	File:		Game.java	
+*	File:		XXXXX.java	
 *	@author:	Emer Thornbury 
 *   			x13123173
 *	@date:		20/11/14	
@@ -8,12 +8,3 @@
 *
 *=====================================
 */
-
-public class Game{
-	private int g = 0;
-	private int game[];
-	
-	
-
-
-}
