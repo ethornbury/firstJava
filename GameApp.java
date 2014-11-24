@@ -1,13 +1,17 @@
 /*
-GameApp.java
-@author ET
-@date   Nov 2014
-@desc the main class of rock paper scissors game
-github
+*	File:		GameApp.java	
+*	@author:	Emer Thornbury 
+*   			x13123173
+*	@date:		20/11/14	
+*
+*	desc of class
+*
+*=====================================
 */
-GameApp{
-main method{
-
+import java.util.Scanner;
+public class GameApp{
+	public static void main (String args[]){
+	
 	would you like to play?
 	how many games?
 		while (games >0){
@@ -23,6 +27,6 @@ main method{
 		loop to traverse the array and display stats
 		print result()
 	}
-	not valid answer
+	
 	
 }
