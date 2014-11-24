@@ -1,0 +1,8 @@
+"C:\Program Files\Java\jdk1.8.0_11\bin\javac" First.java
+"C:\Program Files\Java\jdk8\bin\javac" 
+
+java Second
+
+cd swd
+
+git push github master
