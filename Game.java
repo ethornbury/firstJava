@@ -4,16 +4,16 @@
 *   			x13123173
 *	@date:		20/11/14	
 *
-*	desc of class
-*
+*	Super class
+*	play a game of Rock-Paper-Scissors
 *=====================================
 */
 
 public class Game{
 	
 	// declare vars
-	private int uguess;
-	private int cguess = 0;
+	protected int uguess;
+	protected int cguess = 0;
 	
 	
 	// get input from user
