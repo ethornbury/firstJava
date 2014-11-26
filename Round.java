@@ -8,6 +8,7 @@
 *	instantiable class for a round of Rock-Paper-Scissors
 *=====================================
 */
+import java.util.Scanner;
 public class Round extends Game{
 
 	// declare vars
@@ -15,31 +16,29 @@ public class Round extends Game{
 	private int clife; //computer life
 	private int uGo;
 	private int cGo;
-	private int uGoes[][]; //user guesses for all rounds in game
-	private int cGoes[][]; //computer guesses for all rounds in game
 	
+	//declare and create arrays
+	protected int[][] uGoes = new int[50][50];; //user guesses for all rounds in game
+	protected int[][] cGoes = new int[50][50]; //computer guesses for all rounds in game
+	protected int[][] roundStats = new int [50][50];
 	//private String guess[]; //?
-	private int uRoundW;     //?
-	private int cRoundW;     //?
-	private int uRoundL;     //?
-	private int cRoundL;     //?
-	private int uRoundD;     //?
-	private int cRoundD;     //?
-	private int roundStats[][]; //
-	
-	//create arrays
-	uGoes = new int[50][50];
-	cGoes = new int [50][50];
-	roundStats = new int [50][50];
+	//private int uRoundW;     //?
+	//private int cRoundW;     //?
+	//private int uRoundL;     //?
+	//private int cRoundL;     //?
+	//private int uRoundD;     //?
+	//private int cRoundD;     //?
+		
 	// constructor
-	public void Round(){
-		ulife = 3;
-		clife = 3;
-		r = 0;
-		// initialise stuff
+	public Round(int gameNum){
+		super(gameNum);
+		this.ulife = ulife;
+		this.clife = clife;
+		int r = 0;
+		// initialise stuff?
 	}
 	
-	Scanner kb = new Scanner(System.in);
+	//Scanner kb = new Scanner(System.in); //do I need this here?
 	// set method
 	
 	
@@ -58,7 +57,7 @@ public class Round extends Game{
 		return cGo;
 	}
 	
-	// loop for round - do while ulife more than 0.
+	// loop for rounds till life ends - execute while ulife more than 0.
 	for (int i=1; ulife>0; i++){
 		System.out.println("Round number " + i);
 		System.out.println("And your guess is: (1/2/3)");
@@ -100,14 +99,21 @@ public class Round extends Game{
 			i--; //do not increment i as not a valid turn, still the same round.
 			System.out.println("check i counter " +i);
 			//end of if-else 
-		
-		
-		
 	
-	} //end of for loop
+			} //end of if loop
 	
-	// display details
+			// display details
 	
-} // end of instantiable class
+		} // end of for loop
+		
+	public void displayDetails(){
+		super.displayDetails();
+		System.out.println("heigth: "+heigth);
+		System.out.println("width: "+width);
+	}
+	
+		
+}// end of instantiable class
+
 
 
