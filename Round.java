@@ -8,20 +8,19 @@
 *	instantiable class for a round of Rock-Paper-Scissors
 *=====================================
 */
-import java.util.Scanner;
 public class Round extends Game{
 
 	// declare vars
-	private int ulife; //user life
-	private int clife; //computer life
+	private int uLife; //user life
+	private int cLife; //computer life
 	private int uGo;
 	private int cGo;
 	
-	//declare and create arrays
+	// declare and create arrays
 	protected int[][] uGoes = new int[50][50];; //user guesses for all rounds in game
 	protected int[][] cGoes = new int[50][50]; //computer guesses for all rounds in game
 	protected int[][] roundStats = new int [50][50];
-	//private String guess[]; //?
+	
 	//private int uRoundW;     //?
 	//private int cRoundW;     //?
 	//private int uRoundL;     //?
@@ -31,39 +30,36 @@ public class Round extends Game{
 		
 	// constructor
 	public Round(int gameNum){
-		super(gameNum);
-		this.ulife = ulife;
-		this.clife = clife;
-		int r = 0;
-		// initialise stuff?
+		super(int gameNum);
+                uLife = 3;
+                cLife = 3;
+                int r = 0;
+	
 	}
 	
-	//Scanner kb = new Scanner(System.in); //do I need this here?
+	
 	// set method
 	
 	
-	// do a round - give explanation and get user guess
-	System.out.println("So you don't have to type long words, we will use numbers!");
-	System.out.println("rock = 1");
-	System.out.println("paper = 2");
-	System.out.println("scissors = 3");	
-	System.out.println("And your guess is: (1/2/3)");
+	// give explanation and get user guess
+	
+	System.out.println("rock = 1\npaper = 2\nscissors = 3\nAnd your guess is: (1/2/3)");
+	//System.out.println("paper = 2");
+	//System.out.println("scissors = 3");	
+	//System.out.println("And your guess is: (1/2/3)");
 	uGo = kb.nextInt();
 	
-	//create computer random guess, gives a random integer
-	public void CreateGo() {
-		cGo = (int)(Math.random()*3) + 1; 	//tested and generates the random number between [1, 3]
-		System.out.println("cGo random " + cGo);			//testing purposes
-		return cGo;
-	}
+	// create computer random guess
+	public void CreateGo(){
+            this.cGo = cGo;
+        }
 	
-	// loop for rounds till life ends - execute while ulife more than 0.
-	for (int i=1; ulife>0; i++){
+	// loop for rounds till life ends - execute while uLife more than 0.
+	for (int i=1; uLife>0; i++){
 		System.out.println("Round number " + i);
 		System.out.println("And your guess is: (1/2/3)");
 		uGo = kb.nextInt();
 		
-		Round myRound = new CreateGo();
 		// compare 
 		if(uGo == cGo){
 			uRoundD++; cRoundD++
@@ -105,7 +101,7 @@ public class Round extends Game{
 			// display details
 	
 		} // end of for loop
-		
+	@override	
 	public void displayDetails(){
 		super.displayDetails();
 		System.out.println("heigth: "+heigth);
