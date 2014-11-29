@@ -25,12 +25,12 @@ public class Round extends Game{
 	//private int cRoundW;     //?
 	//private int uRoundL;     //?
 	//private int cRoundL;     //?
-	//private int uRoundD;     //?
-	//private int cRoundD;     //?
+	private int uRoundD;     //?
+	private int cRoundD;     //?
 		
 	// constructor
 	public Round(int gameNum){
-		super(int gameNum);
+		super(gameNum);
                 uLife = 3;
                 cLife = 3;
                 int r = 0;
@@ -62,20 +62,20 @@ public class Round extends Game{
 		
 		// compare 
 		if(uGo == cGo){
-			uRoundD++; cRoundD++
+			uRoundD++; cRoundD++;
 			System.out.println("Hey Draw!!");
-			break;
+			//break;
 			
 			}else if(uGo ==3 && cGo ==2){ //scis beats paper - u wins
 			System.out.println("Hey you win!!");
 			
 			}else if(uGo ==3 && cGo ==1){//scis loses to rock - computer win
 			System.out.println("Ha I win!!");
-			ulife--;
+			uLife--;
 			
 			}else if(uGo ==2 && cGo ==3){//comp win
 			System.out.println("Loser! I win!");
-			ulife--;
+			uLife--;
 			
 			}else if(uGo ==2 && cGo ==1){//user wins
 			System.out.println("You win!!");
@@ -83,7 +83,7 @@ public class Round extends Game{
 			
 			}else if(uGo ==1 && cGo ==2){//comp wins
 			System.out.println("I'm the winner!!");
-			ulife--;
+			uLife--;
 			
 			}else if(uGo ==1 && cGo ==3){//user wins
 			System.out.println("Rats, you win!!");
@@ -92,7 +92,7 @@ public class Round extends Game{
 			}else{
 			//stop your messing and put in valid turn!
 			System.out.println("That's not going to get you anywhere! Quit messing and put in 1/2/3: ");
-			i--; //do not increment i as not a valid turn, still the same round.
+			//i--; //do not increment i as not a valid turn, still the same round.
 			System.out.println("check i counter " +i);
 			//end of if-else 
 	
@@ -101,11 +101,11 @@ public class Round extends Game{
 			// display details
 	
 		} // end of for loop
-	@override	
+	@Override	
 	public void displayDetails(){
 		super.displayDetails();
-		System.out.println("heigth: "+heigth);
-		System.out.println("width: "+width);
+		System.out.println("heigth: ");
+		System.out.println("width: ");
 	}
 	
 		

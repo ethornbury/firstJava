@@ -24,6 +24,7 @@ public class GameApp{
             
             gameNum = kb.nextInt();
             
+            
             if (gameNum == 0){
                 System.out.println("Another time so!");
              }else{

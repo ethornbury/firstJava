@@ -8,33 +8,32 @@
 *	play a game of Rock-Paper-Scissors
 *=====================================
 */
+import java.util.Scanner;
 public class Game{
 	
 	// declare vars
-	private int gameNum;
-	private int uGo;
-	// constructor
+	protected int gameNum;
+	protected  int uGo;
+	
+        Scanner kb = new Scanner(System.in);
+        // constructor
         public Game(){
            this.gameNum = gameNum; 
         }   
         
-        
-	// get input from user
-	// declare and create objects
-        System.out.println("So you don't have to type long words, we will use numbers!");
-	System.out.println("Rock - paper - scissors!");
-	System.out.println("Enter your choice:");
-	System.out.println("1 = rock");
-	System.out.println("2 = paper");
-	System.out.println("3 = scissors");
-	uGo= kb.nextInt();
-	
-	// get winner
-	System.out.println("And my choice is "+cGo);
-        
         // process
         public void playGames(){
             //loop to play games
+            System.out.println("So you don't have to type long words, we will use numbers!");
+            System.out.println("Rock - paper - scissors!");
+            System.out.println("Enter your choice:");
+            System.out.println("1 = rock");
+            System.out.println("2 = paper");
+            System.out.println("3 = scissors");
+            uGo= kb.nextInt();
+
+            // get winner
+            System.out.println("And my choice is "+cGo);
             
         };
             
