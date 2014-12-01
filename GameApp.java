@@ -21,10 +21,8 @@ public class GameApp{
             //Game myGame, myRound;
             Game myGame = new Game();
             
-            //ask user if they would like to play
-           
-                
-            System.out.println("Rock - paper - scissors!\n");  
+            //ask user if they would like to play    
+            System.out.println("Rock - paper - scissors!");  
             System.out.println("Would you like to play Rock-Paper-Scissors with me? y/n");
 	    resp = kb.next();
             while(resp.equalsIgnoreCase("y")){
