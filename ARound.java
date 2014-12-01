@@ -8,7 +8,7 @@
 *	instantiable class for a round of Rock-Paper-Scissors
 *=====================================
 */
-public class ARound extends Game{
+public class ARound{
 
 	// declare vars
 	private int uLife; //user life

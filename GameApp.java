@@ -13,7 +13,7 @@ public class GameApp{
 	public static void main (String args[]){
             // declare vars
             int gameNum;
-            // exception;
+            String resp = "y";
            
             //declare and create objects
             Scanner kb = new Scanner(System.in);
@@ -22,37 +22,19 @@ public class GameApp{
             Game myGame = new Game();
             
             //ask user if they would like to play
-            System.out.println("Would you like to play Rock-Paper-Scissors with me?");
-            System.out.println("Enter the amount of games or 0 to exit"); 
-            gameNum = kb.nextInt();
-             
-                      
-            //statement for playing or leaving
-            switch (gameNum){
-                case 0:
-                   System.out.println("Another time so!");
-                   break;
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                case 11:
-                     // play games
-                    myGame.playGames();
+            
+            while(resp.equalsIgnoreCase("y")){
+                System.out.println("Enter the amount of games to play"); 
+                gameNum = kb.nextInt();   
+                
+                // play games
+                myGame.playGames();
 
-                    //display stats
-                    myGame.displayDetails();
-                    break;
-                default:
-                    gameNum = !kb.hasNextInt();
-                    System.out.println("Thats not valid idiot!");
-                    break;
+                //display stats
+                myGame.displayDetails();
+              
+            System.out.println("Would you like to play Rock-Paper-Scissors with me? y/n");
+	    resp = kb.next();
             }
     }
 }

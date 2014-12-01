@@ -18,7 +18,7 @@ public class Game{
 	
         //declare and create objects
         Scanner kb = new Scanner(System.in);
-        Game myGame, myRound; //for super class
+        ARound myRound = new ARound();
         
         // constructor
         public Game(){
