@@ -1,13 +1,14 @@
 /*
 *	File:		Game.java	
 *	@author:	Emer Thornbury 
-*   			x13123173
+*   	studentID:	x13123173
 *	@date:		20/11/14	
 *
 *	Super class
 *	play a game of Rock-Paper-Scissors
 *=====================================
 */
+
 import java.util.Scanner;
 public class Game{
 	

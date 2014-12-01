@@ -1,7 +1,7 @@
 /*
 *	File:		Round.java	
 *	@author:	Emer Thornbury 
-*   			x13123173
+*   	studentID:	x13123173
 *	@date:	20/11/14	
 *
 *	sub class inherits from Game.java
@@ -27,39 +27,44 @@ public class Round extends Game{
 	//private int cRoundL;     //?
 	private int uRoundD;     //?
 	private int cRoundD;     //?
-		
+	
+        //declare and create objects
+        RandomGo myRandomGo = new RandomGo();
+        
 	// constructor
 	public Round(int gameNum){
-		super(gameNum);
-                uLife = 3;
+		super(int gameNum);
+                uLife = 3; 
+                System.out.println("ulife "+uLife);
                 cLife = 3;
+                System.out.println("clife "+cLife);
                 int r = 0;
-	
+                this.cGo = cGo;
+                System.out.println("cGo "+cGo);
 	}
 	
 	
 	// set method
-	
+        
+        //process
+	public void PlayRound(){
 	
 	// give explanation and get user guess
-	
 	System.out.println("rock = 1\npaper = 2\nscissors = 3\nAnd your guess is: (1/2/3)");
 	//System.out.println("paper = 2");
 	//System.out.println("scissors = 3");	
 	//System.out.println("And your guess is: (1/2/3)");
 	uGo = kb.nextInt();
 	
-	// create computer random guess
-	public void CreateGo(){
-            this.cGo = cGo;
-        }
+	
 	
 	// loop for rounds till life ends - execute while uLife more than 0.
 	for (int i=1; uLife>0; i++){
 		System.out.println("Round number " + i);
 		System.out.println("And your guess is: (1/2/3)");
 		uGo = kb.nextInt();
-		
+		myRandomGo.CreateGo();
+                
 		// compare 
 		if(uGo == cGo){
 			uRoundD++; cRoundD++;
@@ -101,6 +106,7 @@ public class Round extends Game{
 			// display details
 	
 		} // end of for loop
+}
 	@Override	
 	public void displayDetails(){
 		super.displayDetails();

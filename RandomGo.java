@@ -1,12 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author User
- */
+*	File:		Round.java	
+*	@author:	Emer Thornbury 
+*   	studentID:	x13123173
+*	@date:	20/11/14	
+*
+*	sub class inherits from Game.java
+*	instantiable class to generate computer random choice for Rock-Paper-Scissors
+*=====================================
+*/
 public class RandomGo extends Game{
     //declare vars
     protected int cGo;

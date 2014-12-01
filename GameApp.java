@@ -1,10 +1,10 @@
 /*
 *	File:		GameApp.java	
 *	@author:	Emer Thornbury 
-*   			x13123173
+*   	studentID:	x13123173
 *	@date:		20/11/14	
 *
-*	desc of class
+*	main method
 *
 *=====================================
 */
