@@ -41,7 +41,7 @@ public class ARound extends Game{
 	// set method
         
         //process
-	public void playRound(){
+	public void playRounds(){
 	
 	// give explanation and get user guess
 	System.out.println("rock = 1\npaper = 2\nscissors = 3\nAnd your guess is: (1/2/3)");

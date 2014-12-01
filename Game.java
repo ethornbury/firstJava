@@ -18,8 +18,8 @@ public class Game{
 	
         //declare and create objects
         Scanner kb = new Scanner(System.in);
-        //ARound myRound = new ARound();
-        Game myGame, myRound;
+        Game myGame, myRound; //for super class
+        
         // constructor
         public Game(){
            this.gameNum = gameNum; 
@@ -36,28 +36,15 @@ public class Game{
             System.out.println("3 = scissors");
             uGo= kb.nextInt();
             
-            myRound.playRound();
+            do{
+            myRound.playRounds();
             // get winner
-            System.out.println("And my choice is "+cGo);
-            
-        };
-            
-        
+            //System.out.println("And my choice is "+cGo);
+            gameNum--;
+            }while (gameNum>0);
+        }        
                 //display stats
         public void displayDetails(){
-            
+            //display
         };
-	//while (games >0){
-		//	init computerGuess
-		//	init personGuess
-		//	init games, rounds
-			
-		//	Scanner info()
-		//	play games()
-		//	create array of stats()
-		//}
-		//get overall game stats()
-		//loop to traverse the array and display stats
-		//print result()
-
 }
