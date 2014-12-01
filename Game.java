@@ -14,7 +14,7 @@ public class Game{
 	
 	// declare vars
 	protected int gameNum;
-	protected  int uGo;
+	//protected  int uGo;
 	
         //declare and create objects
         Scanner kb = new Scanner(System.in);
@@ -22,29 +22,32 @@ public class Game{
         
         // constructor
         public Game(){
-           this.gameNum = gameNum; 
+           int ul = 0;
+           int uw = 0;
+           int cw = 0;
+           int cl = 0;
         }   
         
         // process
         public void playGames(){
             //loop to play games
             System.out.println("So you don't have to type long words, we will use numbers!");
-            System.out.println("Rock - paper - scissors!");
-            System.out.println("Enter your choice:");
+            //System.out.println("Rock - paper - scissors!");
             System.out.println("1 = rock");
             System.out.println("2 = paper");
             System.out.println("3 = scissors");
-            uGo= kb.nextInt();
+            //uGo= kb.nextInt();
             
             do{
             myRound.playRounds();
-            // get winner
-            //System.out.println("And my choice is "+cGo);
+            //
+            
             gameNum--;
             }while (gameNum>0);
         }        
                 //display stats
         public void displayDetails(){
             //display
+            System.out.println("Rock - paper - scissors! display stats in game.java");
         };
 }
