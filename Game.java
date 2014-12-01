@@ -4,7 +4,7 @@
 *   	studentID:	x13123173
 *	@date:		20/11/14	
 *
-*	Super class
+*	
 *	play a game of Rock-Paper-Scissors
 *=====================================
 */
@@ -18,7 +18,7 @@ public class Game{
 	
         //declare and create objects
         Scanner kb = new Scanner(System.in);
-        ARound myRound = new ARound();
+        Round myRound = new Round();
         
         // constructor
         public Game(){
@@ -31,15 +31,15 @@ public class Game{
         // process
         public void playGames(){
             //loop to play games
-            System.out.println("So you don't have to type long words, we will use numbers!");
+            System.out.println("So you don't have to type long words, we will use numbers!");           
             //System.out.println("Rock - paper - scissors!");
             System.out.println("1 = rock");
             System.out.println("2 = paper");
             System.out.println("3 = scissors");
-            //uGo= kb.nextInt();
             
             do{
             myRound.playRounds();
+            
             //
             
             gameNum--;
@@ -49,5 +49,16 @@ public class Game{
         public void displayDetails(){
             //display
             System.out.println("Rock - paper - scissors! display stats in game.java");
+//            for(numrows = gameNum){
+//                for(loop for cols){
+//   
+//            
+//            
+//            
+//                }
+//            
+//            
+//            
+//            }
         };
 }

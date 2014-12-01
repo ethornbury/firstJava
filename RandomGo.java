@@ -4,7 +4,7 @@
 *   	studentID:	x13123173
 *	@date:	20/11/14	
 *
-*	sub class inherits from Game.java
+*	
 *	instantiable class to generate computer random choice for Rock-Paper-Scissors
 *=====================================
 */
