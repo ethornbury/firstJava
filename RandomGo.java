@@ -8,7 +8,7 @@
 *	instantiable class to generate computer random choice for Rock-Paper-Scissors
 *=====================================
 */
-public class RandomGo extends Game{
+public class RandomGo{
     //declare vars
     protected int cGo;
     

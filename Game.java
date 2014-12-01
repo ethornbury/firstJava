@@ -18,8 +18,8 @@ public class Game{
 	
         //declare and create objects
         Scanner kb = new Scanner(System.in);
-        DoRound myRound = new DoRound();
-
+        //ARound myRound = new ARound();
+        Game myGame, myRound;
         // constructor
         public Game(){
            this.gameNum = gameNum; 
@@ -36,7 +36,7 @@ public class Game{
             System.out.println("3 = scissors");
             uGo= kb.nextInt();
             
-            myRound.playGames();
+            myRound.playRound();
             // get winner
             System.out.println("And my choice is "+cGo);
             

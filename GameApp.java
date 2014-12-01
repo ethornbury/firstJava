@@ -16,8 +16,8 @@ public class GameApp{
             
             //declare and create objects
             Scanner kb = new Scanner(System.in);
+            //Game myGame, myRound;
             Game myGame = new Game();
-            
             //ask user if they would like to play
             System.out.println("Would you like to play Rock-Paper-Scissors with me?");
             System.out.println("Enter the amount of games or 0 to exit"); 

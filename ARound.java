@@ -1,5 +1,5 @@
 /*
-*	File:		DoRound.java	
+*	File:		ARound.java	
 *	@author:	Emer Thornbury 
 *   	studentID:	x13123173
 *	@date:	20/11/14	
@@ -41,7 +41,7 @@ public class ARound extends Game{
 	// set method
         
         //process
-	public void PlayRound(){
+	public void playRound(){
 	
 	// give explanation and get user guess
 	System.out.println("rock = 1\npaper = 2\nscissors = 3\nAnd your guess is: (1/2/3)");
@@ -115,7 +115,7 @@ public class ARound extends Game{
 	
 		} // end of for loop
 }
-	@Override	
+	//@Override	
 	public void displayDetails(){
 		super.displayDetails();
 		System.out.println("heigth: ");
