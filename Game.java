@@ -16,7 +16,10 @@ public class Game{
 	protected int gameNum;
 	protected  int uGo;
 	
+        //declare and create objects
         Scanner kb = new Scanner(System.in);
+        DoRound myRound = new DoRound();
+
         // constructor
         public Game(){
            this.gameNum = gameNum; 
@@ -32,7 +35,8 @@ public class Game{
             System.out.println("2 = paper");
             System.out.println("3 = scissors");
             uGo= kb.nextInt();
-
+            
+            myRound.playGames();
             // get winner
             System.out.println("And my choice is "+cGo);
             

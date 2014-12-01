@@ -1,5 +1,5 @@
 /*
-*	File:		Round.java	
+*	File:		DoRound.java	
 *	@author:	Emer Thornbury 
 *   	studentID:	x13123173
 *	@date:	20/11/14	
@@ -8,7 +8,7 @@
 *	instantiable class for a round of Rock-Paper-Scissors
 *=====================================
 */
-public class Round extends Game{
+public class DoRound extends Game{
 
 	// declare vars
 	private int uLife; //user life
@@ -27,7 +27,7 @@ public class Round extends Game{
         RandomGo myRandomGo = new RandomGo();
         
 	// constructor
-	public Round(){
+	public DoRound(){
 		//super(int gameNum);
                 uLife = 3; 
                 System.out.println("ulife "+uLife);
