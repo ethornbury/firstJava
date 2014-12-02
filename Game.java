@@ -5,7 +5,7 @@
 *	@date:		20/11/14	
 *
 *	
-*	play a game of Rock-Paper-Scissors
+*	instantiable class to play a game of Rock-Paper-Scissors
 *=====================================
 */
 
@@ -14,7 +14,7 @@ public class Game{
 	
 	// declare vars
 	protected int gameNum;
-	//protected  int uGo;
+	protected  int uGo;
 	
         //declare and create objects
         Scanner kb = new Scanner(System.in);
@@ -26,39 +26,30 @@ public class Game{
            int uw = 0;
            int cw = 0;
            int cl = 0;
-        }   
+        }//end of Game()   
         
         // process
-        public void playGames(){
-            //loop to play games
-            System.out.println("So you don't have to type long words, we will use numbers!");           
-            //System.out.println("Rock - paper - scissors!");
+        public void PlayGames(){
+            System.out.println("So you don't have to type long words, we will use numbers!");
             System.out.println("1 = rock");
             System.out.println("2 = paper");
             System.out.println("3 = scissors");
             
+            //play round
             do{
-            myRound.playRounds();
+                myRound.PlayRounds();
             
-            //
+                //
             
-            gameNum--;
+                gameNum--;
             }while (gameNum>0);
-        }        
-                //display stats
-        public void displayDetails(){
-            //display
+        
+        }// end of playGames()
+              
+        public void DisplayDetails(){
+             //display stats
             System.out.println("Rock - paper - scissors! display stats in game.java");
 //            for(numrows = gameNum){
 //                for(loop for cols){
-//   
-//            
-//            
-//            
-//                }
-//            
-//            
-//            
-//            }
-        };
-}
+        }//end of DisplayDetails()
+    }//end of class

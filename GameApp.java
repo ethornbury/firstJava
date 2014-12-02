@@ -13,7 +13,7 @@ public class GameApp{
 	public static void main (String args[]){
             // declare vars
             int gameNum;
-            String resp = "";
+            String response;
            
             //declare and create objects
             Scanner kb = new Scanner(System.in);
@@ -24,17 +24,18 @@ public class GameApp{
             //ask user if they would like to play    
             System.out.println("Rock - paper - scissors!");  
             System.out.println("Would you like to play Rock-Paper-Scissors with me? y/n");
-	    resp = kb.next();
-            while(resp.equalsIgnoreCase("y")){
-            System.out.println("Enter the amount of games to play"); 
-            gameNum = kb.nextInt();   
+	    response = kb.next();
+            
+            while(response.equalsIgnoreCase("y")){
+                System.out.println("Enter the amount of games to play"); 
+                gameNum = kb.nextInt();   
                 
-             // play games
-            myGame.playGames();
+                // play games
+                myGame.PlayGames();
 
-            //display stats
-            myGame.displayDetails();
-            }
-        System.out.println("ok, we're done here!");    
-    }
-}
+                //display stats
+                myGame.DisplayDetails();
+            }//end while loop
+            System.out.println("ok, we're done here!");    
+        }//end main method
+}// end App class
