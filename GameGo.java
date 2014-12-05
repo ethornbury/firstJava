@@ -21,14 +21,16 @@ public class GameGo{
     private int cRound;
 
     // declare and create arrays
-    private String[][] uGoes = new String[50][50];; //user stats (a,b = rounds,result)
-    private String[][] cGoes = new String[50][50]; //computer stats (a,b = rounds,result)
-    private String[][] roundStats = new String[50][50];
+    //private int[][] uGoes = new int[50][3]; //user stats [rounds][result]
+    //private int[][] cGoes = new int[50][3]; //computer stats [rounds][result]
+    //private String[][] shapeStats = new String[50][2]; //[rounds][user shape,computer shape]
+	//private int[][] roundStat = new int[][];
+	//private int[][] gameStat = new int[][];
 
     //declare and create objects
     Scanner kb = new Scanner(System.in);
     RandomGo myRandomGo = new RandomGo();
-
+	//Reset myReset = new Reset();
 
     // constructor
     public GameGo(){
@@ -39,8 +41,16 @@ public class GameGo{
 
     // process
     public void PlayGames(){
+		// declare and create arrays in method so no reset needed
+		private int[][] uGoes = new int[50][3]; //user stats [rounds][result]
+		private int[][] cGoes = new int[50][3]; //computer stats [rounds][result]
+    	private String[][] shapeStats = new String[50][2]; //[rounds][user shape,computer shape]
+
+		//myReset.ResetAll();
         System.out.println("Enter the amount of games you would like to play");
         gameNum = kb.nextInt();
+
+
         System.out.println("gameNum = "+gameNum);
         while (gameNum != 0){
 
