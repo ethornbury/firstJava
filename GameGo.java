@@ -10,7 +10,7 @@
 */
 
 import java.util.Scanner;
-public class Game{
+public class GameGo{
 	
     // declare vars
     private int gameNum;
@@ -99,7 +99,7 @@ public class Game{
                         uRound++;
                         cGoes[i][i]= "Lost";
                         
-                        System.out.println("Random go in else if statement  " + cGo);
+                        //System.out.println("Random go in else if statement  " + cGo); //testing
 		}else if(uGo ==3 && cGo ==1){
 			System.out.println("Ha I win!!");
 			uLife--;

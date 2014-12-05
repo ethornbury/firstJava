@@ -1,4 +1,4 @@
-/*
+ /*
 *	File:		GameApp.java	
 *	@author:	Emer Thornbury 
 *   	studentID:	x13123173
@@ -17,7 +17,7 @@ public class GameApp{
            
             //declare and create objects
             Scanner kb = new Scanner(System.in);
-            Game myGame = new Game();
+            Game myGame = new GameGo();
             RandomGo myRandomGo = new RandomGo();
             
             //ask user if they would like to play    
@@ -34,4 +34,4 @@ public class GameApp{
             
             System.out.println("ok, we're done here!");    
         }//end main method
-}// end App class
+}// end App class   
