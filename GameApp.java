@@ -10,16 +10,15 @@
 */
 import java.util.Scanner;
 public class GameApp{
-	public static void main (String args[]){
+	public static void main(String args[]){
             // declare vars
             int gameNum;
             String response;
            
             //declare and create objects
             Scanner kb = new Scanner(System.in);
-            
-            //Game myGame, myRound;
             Game myGame = new Game();
+            RandomGo myRandomGo = new RandomGo();
             
             //ask user if they would like to play    
             System.out.println("Rock - paper - scissors!");  
@@ -27,15 +26,12 @@ public class GameApp{
 	    response = kb.next();
             
             while(response.equalsIgnoreCase("y")){
-                System.out.println("Enter the amount of games to play"); 
-                gameNum = kb.nextInt();   
-                
                 // play games
                 myGame.PlayGames();
-
                 //display stats
-                myGame.DisplayDetails();
+               // myGame.DisplayDetails();
             }//end while loop
+            
             System.out.println("ok, we're done here!");    
         }//end main method
 }// end App class

@@ -14,30 +14,27 @@ public class Round{
 	private int uLife; //user life
 	private int uGo;
 	private int cGo;
-        private int uRoundD;     //?
-	private int cRoundD;     //?
+        private int uRound;     
+	private int cRound;
+        private int roundNum;
 	
 	// declare and create arrays
 	private String[][] uGoes = new String[50][50];; //user stats (a,b = rounds,result)
 	private String[][] cGoes = new String[50][50]; //computer stats (a,b = rounds,result)
-	private int[][] roundStats = new int [50][50];
+	private String[][] roundStats = new String[50][50];
  
         //declare and create objects
         Scanner kb = new Scanner(System.in);
-        RandomGo myRandomGo = RandomGo();
-        
+        RandomGo myRandomGo = new RandomGo();
+        cGo = myRandomGo.getCGo();
 	// constructor
 	public Round(){
             //initialise vars
-            uLife = 3; 
+            uLife = 3;   
 	}
 	
-        //set method
-	//public int setCGo(){
-        //    this.cGo = cGo;
-	//}
 	// get
-        cGo = myRandomGo.getCGo();
+        
         
         //process to create random go
         //public void CreateGo() {
@@ -62,7 +59,7 @@ public class Round{
 		// compare 
 		if(uGo == cGo){
                     System.out.println("Random go in if statement  " + cGo);
-                    uRoundD++; cRoundD++;
+                    uRound++; cRound++;
                     System.out.println("Hey Draw!!");
                         
                     // draw types                      
@@ -91,7 +88,7 @@ public class Round{
                         System.out.println("I choose Paper");
 			// user wins
                         uGoes[i][i]= "Won";
-                        uRoundD++;
+                        uRound++;
                         cGoes[i][i]= "Lost";
                         
                         System.out.println("Random go in else if statement  " + cGo);
@@ -151,14 +148,14 @@ public class Round{
         }//end process
 	//process
 	
-		for (int i = 0; i < rain.length; i++){
-                    for (int j = 0; j < rain[i].length; j++){
-			cells++;
-			sum = roundStats[roundNum][j];//j 4 cols
-                        System.out.println(" cells"+roundStats[roundNum][j]);
-			}
-                    System.out.println(" cells"+roundStats[roundNum][j]);
-		}
+//		for (int i = 0; i < rain.length; i++){
+//                    for (int j = 0; j < rain[i].length; j++){
+//			cells++;
+//			sum = roundStats[roundNum][j];//j 4 cols
+//                        System.out.println(" cells"+roundStats[roundNum][j]);
+//			}
+//                    System.out.println(" cells"+roundStats[roundNum][j]);
+//		}
                 
                 
                 
