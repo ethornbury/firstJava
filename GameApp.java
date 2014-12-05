@@ -17,7 +17,7 @@ public class GameApp{
            
             //declare and create objects
             Scanner kb = new Scanner(System.in);
-            Game myGame = new GameGo();
+            GameGo myGame = new GameGo();
             RandomGo myRandomGo = new RandomGo();
             
             //ask user if they would like to play    

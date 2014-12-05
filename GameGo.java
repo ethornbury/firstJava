@@ -17,9 +17,6 @@ public class GameGo{
     private int uGo;
     private int cGo;
     private int uLife; //user life
-    private int uRound;     
-    private int cRound;
-    private int roundNum;
     
     // declare and create arrays
     private String[][] uGoes = new String[50][50];; //user stats (a,b = rounds,result)
@@ -33,12 +30,9 @@ public class GameGo{
     
     
     // constructor
-    public Game(){
+    public GameGo(){
         uLife = 3;
-        int ul = 0;
-        int uw = 0;
-        int cw = 0;
-        int cl = 0;
+        
     }//end of Game()   
      
         
@@ -157,7 +151,8 @@ public class GameGo{
         
         gameNum--; //-1 game
         } //end of while(gameNum!=0)
-        
+        System.out.println("Ok end of game, lets look at stats");
+        break;
         //public void DisplayDetails(){
              //display stats
          //   System.out.println("Rock - paper - scissors! display stats in game.java");
