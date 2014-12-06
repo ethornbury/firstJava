@@ -11,6 +11,9 @@
 public class RandomGo{
     //declare vars
     private int cGo;
+    private int uGo;
+    private String uGoShape;
+	private String cGoShape;
 
     //constructor
     public void RandomGo(){
@@ -27,26 +30,50 @@ public class RandomGo{
         return cGo;
     }
 
+	//
+
+	public void setUGo(int uGo){
+		this.uGo = uGo;
+	}
+
+	public void setCGo(int cGo){
+		this.cGo = cGo;
+	}
+
     // process to translate choices from integer to String
     public void intShape(){
-		if(uGo = 1 || cGo = 1){
+
+		if(uGo == 1){
 			uGoShape = "Rock";
 			cGoShape = "Rock";
 		}
-		if(uGo = 2 || cGo = 2){
+		if(cGo == 1){
+			uGoShape = "Rock";
+			cGoShape = "Rock";
+		}
+		if(uGo == 2){
 			uGoShape = "Paper";
 			cGoShape = "Paper";
-
 		}
-		if(uGo = 3 || cGo = 3){
+		if(cGo == 2){
+			uGoShape = "Paper";
+			cGoShape = "Paper";
+		}
+		if(uGo == 3){
+			uGoShape = "Scissors";
+			cGoShape = "Scissors";
+		}
+		if(cGo == 3){
 			uGoShape = "Scissors";
 			cGoShape = "Scissors";
 		}
 	}
 
-	public String getIntShape(){
+	public String getIntShapeU(){
 		return uGoShape;
-		return cGoShape;
+	}
+	public String getIntShapeC(){
+			return cGoShape;
 	}
 
 }

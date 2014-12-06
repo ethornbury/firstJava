@@ -44,7 +44,7 @@ public class GameGo{
 		// declare and create arrays in method so no reset needed
 		//private int[][] roundStat = new int[100][6]; //[possible rounds][uw,ul,ud,cw,cd,cl]
 		//private int[][] cGoes = new int[50][3]; //computer stats [rounds][result]
-    	private String[][] shapeStats = new String[50][2]; //[rounds][user shape,computer shape]
+    	String[][] shapeStats = new String[50][2]; //[rounds][user shape,computer shape]
 
 		//myReset.ResetAll();
         System.out.println("Enter the amount of games you would like to play");
@@ -54,7 +54,7 @@ public class GameGo{
         System.out.println("gameNum = "+gameNum);
         while (gameNum != 0){
 			// declare and create arrays in method so no reset needed
-			private int[][] roundStat = new int[100][6]; //[possible rounds][uw,ul,ud,cw,cd,cl]
+			int[][] roundStat = new int[100][6]; //[possible rounds][uw,ul,ud,cw,cd,cl]
 
             System.out.println("So you don't have to type long words, we will use numbers!");
             System.out.println("rock = 1\npaper = 2\nscissors = 3\n");
@@ -68,10 +68,17 @@ public class GameGo{
             uGo = kb.nextInt();
             myRandomGo.CreateGo();
             cGo = myRandomGo.getCGo();
+
+			// setter, process to shape,getter
+            myRandomGo.setUGo();
+            myRandomGo.setCGo();
+            myRandomGo.intShape();
+            myRandomGo.getIntShapeU();
+            myRandomGo.getIntShapeC();
             System.out.println("uGo "+uGo); //testing
             System.out.println("cGo  "+cGo); //testing
-            shapeStat[i][0] = uGo;
-            shapeStat[i][1] = cGo;
+            shapeStat[i][0] = uGoShape;
+            shapeStat[i][1] = cGoShape;
 
             // compare
             if(uGo == cGo){
