@@ -30,7 +30,7 @@ public class RandomGo{
         return cGo;
     }
 
-	//
+	//setters
 
 	public void setUGo(int uGo){
 		this.uGo = uGo;
@@ -45,35 +45,30 @@ public class RandomGo{
 
 		if(uGo == 1){
 			uGoShape = "Rock";
-			cGoShape = "Rock";
 		}
 		if(cGo == 1){
-			uGoShape = "Rock";
 			cGoShape = "Rock";
 		}
 		if(uGo == 2){
 			uGoShape = "Paper";
-			cGoShape = "Paper";
 		}
 		if(cGo == 2){
-			uGoShape = "Paper";
 			cGoShape = "Paper";
 		}
 		if(uGo == 3){
 			uGoShape = "Scissors";
-			cGoShape = "Scissors";
 		}
 		if(cGo == 3){
-			uGoShape = "Scissors";
 			cGoShape = "Scissors";
 		}
+                System.out.println(cGoShape + " c shape and  u "+uGoShape);
 	}
 
-	public String getIntShapeU(){
+	public String getShapeU(){
 		return uGoShape;
 	}
-	public String getIntShapeC(){
-			return cGoShape;
+	public String getShapeC(){
+		return cGoShape;
 	}
 
 }

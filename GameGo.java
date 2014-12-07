@@ -19,6 +19,8 @@ public class GameGo{
     private int uLife; //user life
     private int uRound;
     private int cRound;
+    private String uGoShape;
+    private String cGoShape; 
 
     // declare and create arrays
     //private int[][] uGoes = new int[50][3]; //user stats [rounds][result]
@@ -35,31 +37,29 @@ public class GameGo{
     // constructor
     public GameGo(){
         uLife = 3;
-
+        
     }//end of Game() constructor
 
 
     // process
     public void PlayGames(){
-		// declare and create arrays in method so no reset needed
-		//private int[][] roundStat = new int[100][6]; //[possible rounds][uw,ul,ud,cw,cd,cl]
-		//private int[][] cGoes = new int[50][3]; //computer stats [rounds][result]
-    	String[][] shapeStats = new String[50][2]; //[rounds][user shape,computer shape]
-
-		//myReset.ResetAll();
+        
+	// declare and create arrays in method so no reset needed
+	String[][] shapeStat = new String[50][2]; //[rounds][user shape,computer shape]    
+        //int[][] roundStat = new int[100][6]; //[possible rounds][uw,ul,ud,cw,cd,cl]
+        
         System.out.println("Enter the amount of games you would like to play");
         gameNum = kb.nextInt();
 
-
-        System.out.println("gameNum = "+gameNum);
+        System.out.println("gameNum = "+gameNum); //testing
         while (gameNum != 0){
 			// declare and create arrays in method so no reset needed
-			int[][] roundStat = new int[100][6]; //[possible rounds][uw,ul,ud,cw,cd,cl]
+			int[][] roundStat = new int[100][5]; //[possible rounds][uw,ul,ud,cw,cd,cl]
 
             System.out.println("So you don't have to type long words, we will use numbers!");
             System.out.println("rock = 1\npaper = 2\nscissors = 3\n");
 
-        //process for playing rounds
+        //playing rounds below until user lifes = 0
 
 	// loop for rounds - execute while uLife more than 0.
         for (int i=0; uLife > 0; i++){
@@ -69,14 +69,17 @@ public class GameGo{
             myRandomGo.CreateGo();
             cGo = myRandomGo.getCGo();
 
-			// setter, process to shape,getter
-            myRandomGo.setUGo();
-            myRandomGo.setCGo();
+            // setter, process to shape,getter
+            myRandomGo.setUGo(uGo);
+            myRandomGo.setCGo(cGo);
+            
             myRandomGo.intShape();
-            myRandomGo.getIntShapeU();
-            myRandomGo.getIntShapeC();
-            System.out.println("uGo "+uGo); //testing
-            System.out.println("cGo  "+cGo); //testing
+            myRandomGo.getShapeU();
+            myRandomGo.getShapeC();
+            System.out.println(cGo + " cGo uGo "+uGo); //testing
+            
+            System.out.println(cGoShape  +" cGoShape uGoShape "+ uGoShape); //testing
+ 
             shapeStat[i][0] = uGoShape;
             shapeStat[i][1] = cGoShape;
 
@@ -90,21 +93,21 @@ public class GameGo{
                     case 1:
                         System.out.println("We both choose Rock");
 						//result draw
-						roundStat[i][i]= "Draw";
-                    	roundStat[i][i]= "Draw";
+						roundStat[i][2]= 1;//1 draw for user
+                    	roundStat[i][5]= 1;//1 draw for computer
                         break;
 
                     case 2:
                         System.out.println("We both choose Paper");
 					    //result draw
-						uGoes[i][i]= "Draw";
-                    	cGoes[i][i]= "Draw";
+						roundStat[i][2]= 1;//1 draw for user
+                    	roundStat[i][5]= 1;//1 draw for computer
                 		break;
                     case 3:
                         System.out.println("We both choose Scissors");
 						//result draw
-						uGoes[i][i]= "Draw";
-                    	cGoes[i][i]= "Draw";
+						roundStat[i][2]= 1;//1 draw for user
+                    	roundStat[i][5]= 1;//1 draw for computer
                         break;
 
                     default:
@@ -117,10 +120,10 @@ public class GameGo{
                         System.out.println("You choose Scissors");
                         System.out.println("I choose Paper");
 			// user wins
-                        uGoes[i][i]= "Won";
+                        roundStat[i][0]= 1;//1 win for user                       
+                        roundStat[i][4]= 1;//1 lose for computer
+                        
                         uRound++;
-                        cGoes[i][i]= "Lost";
-
                         //System.out.println("Random go in else if statement  " + cGo); //testing
 		}else if(uGo ==3 && cGo ==1){
 			System.out.println("Ha I win!!");
@@ -128,8 +131,8 @@ public class GameGo{
 			// computer wins
                         System.out.println("You choose Scissors");
                         System.out.println("I choose Rock");
-                        uGoes[i][i]= "Lost";
-                        cGoes[i][i]= "Won";
+                        roundStat[i][1]= 1;//lose for user
+                        roundStat[i][3]= 1;//win for computer
 
 		}else if(uGo ==2 && cGo ==3){
 			System.out.println("Loser! I win!");
@@ -137,16 +140,16 @@ public class GameGo{
                         System.out.println("You choose Paper");
                         System.out.println("I choose Scissors");
 			// computer win
-                        uGoes[i][i]= "Lost";
-                        cGoes[i][i]= "Won";
+                        roundStat[i][1]= 1;//lose for user
+                        roundStat[i][3]= 1;//win for computer
 
 		}else if(uGo ==2 && cGo ==1){
 			System.out.println("You win!!");
                         System.out.println("You choose Paper");
                         System.out.println("I choose Rock");
 			// user wins
-			uGoes[i][i]= "Won";
-                        cGoes[i][i]= "Lost";
+			roundStat[i][0]= 1;//1 win for user                       
+                        roundStat[i][4]= 1;//1 lose for computer
 
 		}else if(uGo ==1 && cGo ==2){
 			System.out.println("I'm the winner!!");
@@ -154,16 +157,16 @@ public class GameGo{
                         System.out.println("You choose Rock");
                         System.out.println("I choose Paper");
 			// computer wins
-                        uGoes[i][i]= "Lost";
-                        cGoes[i][i]= "Won";
+                        roundStat[i][1]= 1;//lose for user
+                        roundStat[i][3]= 1;//win for computer
 
 		}else if(uGo ==1 && cGo ==3){
 			System.out.println("Rats, you win!!");
                         System.out.println("You choose Rock");
                         System.out.println("I choose Scissors");
 			// user wins
-                        uGoes[i][i]= "Won";
-                        cGoes[i][i]= "Lost";
+                        roundStat[i][0]= 1;//1 win for user                       
+                        roundStat[i][4]= 1;//1 lose for computer
 
 		}else {
 			System.out.println("That's not going to get you anywhere! Quit messing and put in 1/2/3: ");
