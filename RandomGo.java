@@ -8,12 +8,13 @@
 *	instantiable class to generate computer random choice for Rock-Paper-Scissors
 *=====================================
 */
+import java.util.Scanner;
 public class RandomGo{
     //declare vars
     private int cGo;
     private int uGo;
     private String uGoShape;
-	private String cGoShape;
+    private String cGoShape;
 
     //constructor
     public void RandomGo(){
@@ -61,13 +62,15 @@ public class RandomGo{
 		if(cGo == 3){
 			cGoShape = "Scissors";
 		}
-                System.out.println(cGoShape + " c shape and  u "+uGoShape);
+                //System.out.println(cGoShape + " c shape and  u "+uGoShape);//testing
 	}
 
 	public String getShapeU(){
+              //System.out.println("in getter c shape and  u "+uGoShape);//testing
 		return uGoShape;
 	}
 	public String getShapeC(){
+              //System.out.println(cGoShape + "ingetter c shape");//testing
 		return cGoShape;
 	}
 
