@@ -1,42 +1,45 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author User
- */
+*	File:		Winner.java
+*	@author:	Emer Thornbury
+*   	studentID:	x13123173
+*	@date:		7/12/14
+*
+*
+*	instantiable class in game of Rock-Paper-Scissors
+*=====================================
+*/
 public class Winner {
- // declare and create arrays in method so no reset needed
-	String[][] shapeStat = new String[50][2]; //[rounds][user shape,computer shape]    
-        int[][] roundStat = new int[100][6]; //[possible rounds][uw,ul,ud,cw,cd,cl]
-        int gameStat = new int[5]; //[gameNum, uw,ul,cw,cl]
-        int[][] roundStatW = new int[100][6]; //[possible rounds][uw,ul,ud,cw,cd,cl]
-	//constructor
+ // declare and create arrays
+        private int[][] roundStat = new int[100][6]; //[possible rounds][uw,ul,ud,cw,cd,cl]
+        private int gameStat = new int[5]; //[gameNum, uw,ul,cw,cl]
+        private int[][] roundStatW = new int[100][2]; //[possible rounds][uw,ul,d]
+	private int r;
+        //constructor
 	public Winner(){
-
 	}
 
 	//setter
 	public void setRoundStat(int roundStat[][]){
 		this.roundStat = roundStat;
 	}
+        public void setR(int r){
+            this.r = r;
+        }
 
 	//getter
 	public int[][] getRoundStat(){
-		return roundStat;
+		return roundStatW;
 	}
 
 	//process
 	public void computeRoundWin(){
 		//create array
-		roundStatW = new int[temp.length][2];
+		roundStatW = new int[100][2];
 
 		//traverse array
-		for(int i = 0; i < .length; i++){
+		for(int i = 0; i < r; i++){
 			//initialise the min with first
-			roundStatW[i][0] = temp[i][0];
+			roundStatW[i][0] = [i][0];
 			//initialsie the max
 			roundStatW[i][1] = temp[i][0];
 

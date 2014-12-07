@@ -4,8 +4,8 @@
 *   	studentID:	x13123173
 *	@date:	20/11/14
 *
-*
-*	instantiable class to generate computer random choice for Rock-Paper-Scissors
+*       instantiable class to generate computer random choice for Rock-Paper-Scissors
+*	and convert integer choice to string
 *=====================================
 */
 import java.util.Scanner;
@@ -62,15 +62,15 @@ public class RandomGo{
 		if(cGo == 3){
 			cGoShape = "Scissors";
 		}
-                //System.out.println(cGoShape + " c shape and  u "+uGoShape);//testing
+                //System.out.println(cGoShape + " c shape and u "+uGoShape);//testing
 	}
 
 	public String getShapeU(){
-              //System.out.println("in getter c shape and  u "+uGoShape);//testing
+              //System.out.println("in getter u shape: "+uGoShape);//testing
 		return uGoShape;
 	}
 	public String getShapeC(){
-              //System.out.println(cGoShape + "ingetter c shape");//testing
+              //System.out.println(cGoShape + "in getter c shape");//testing
 		return cGoShape;
 	}
 

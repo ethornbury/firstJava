@@ -13,28 +13,27 @@ public class GameGo{
 
     // declare vars
     private int gameNum;
+    private int cGameW, uGameW, cGameL, uGameL;
     private int r;
     private int uGo;
     private int cGo;
+    private int cWin, uWin, cLose, uLose, draws;
     private int uLife; //user life
     private String uGoShape;
     private String cGoShape; 
 
     // declare and create arrays
-    //private int[][] uGoes = new int[50][3]; //user stats [rounds][result]
-    //private int[][] cGoes = new int[50][3]; //computer stats [rounds][result]
-    //private String[][] shapeStats = new String[50][2]; //[rounds][user shape,computer shape]
-	//private int[][] roundStat = new int[100][6]; //[possible rounds][uw,ul,ud,cw,cd,cl
+    private String[][] shapeStats = new String[50][2]; //[rounds][user shape,computer shape]
 
     //declare and create objects
     Scanner kb = new Scanner(System.in);
     RandomGo myRandomGo = new RandomGo();
-	//Reset myReset = new Reset();
 
     // constructor
     public GameGo(){
         uLife = 3;
-        r = 0;
+        r = 0; gameNum = -1;
+        cWin = 0; cLose = 0; uWin = 0; uLose = 0; draws = 0;
         
     }//end of Game() constructor
 
@@ -45,14 +44,10 @@ public class GameGo{
         gameNum = kb.nextInt();
         
 	// declare and create arrays in method so no reset needed
-	String[][] shapeStat = new String[50][2]; //[rounds][user shape,computer shape]    
-        int[][] roundStat = new int[100][6]; //[possible rounds][uw,ul,ud,cw,cd,cl]
-        int[] gameStat = new int[5]; //[number of game,uw,ul,cw,cl]
+	String[][] shapeStat = new String[50][2]; //[rounds][user shape,computer shape]
         
         System.out.println("gameNum = "+gameNum); //testing
-        while (gameNum != 0){
-			// declare and create arrays in method so no reset needed
-			//int[][] roundStat = new int[100][5]; //[possible rounds][uw,ul,ud,cw,cd,cl]
+        while (gameNum > 0){
 
             System.out.println("So you don't have to type long words, we will use numbers!");
             System.out.println("rock = 1\npaper = 2\nscissors = 3");
@@ -90,19 +85,17 @@ public class GameGo{
                 switch (cGo){
                     case 1:
                         System.out.println("We both choose Rock");
-						roundStat[r][2]= 1;//1 draw for user
-                    	roundStat[r][5]= 1;//1 draw for computer
+			draws++;
                         break;
 
                     case 2:
                         System.out.println("We both choose Paper");
-						roundStat[r][2]= 1;//1 draw for user
-                    	roundStat[r][5]= 1;//1 draw for computer
-                		break;
+			draws++;
+                	break;
+                        
                     case 3:
                         System.out.println("We both choose Scissors");
-						roundStat[r][2]= 1;//1 draw for user
-                    	roundStat[r][5]= 1;//1 draw for computer
+                        draws++;
                         break;
 
                     default:
@@ -114,82 +107,90 @@ public class GameGo{
                 }else if(uGo ==3 && cGo ==2){
 			System.out.println("Hey you win!!"); // user wins
                         System.out.println("You choose Scissors");
-                        System.out.println("I choose Paper");
-                        roundStat[r][0]= 1;//1 win for user                       
-                        roundStat[r][4]= 1;//1 lose for computer                   
-    
+                        System.out.println("I choose Paper");          
+                        uWin++; cLose++;
+                        
 		}else if(uGo ==3 && cGo ==1){
 			System.out.println("Ha I win!!"); // computer wins
 			uLife--;
                         System.out.println("You choose Scissors");
                         System.out.println("I choose Rock");
-                        roundStat[r][1]= 1;//lose for user
-                        roundStat[r][3]= 1;//win for computer
+                        uLose++; cWin++;
 
 		}else if(uGo ==2 && cGo ==3){
 			System.out.println("Loser! I win!"); // computer win
                         System.out.println("You choose Paper");
                         System.out.println("I choose Scissors");
 			uLife--;
-                        roundStat[r][1]= 1;//lose for user
-                        roundStat[r][3]= 1;//win for computer
-
+                        uLose++; cWin++;
+                        
 		}else if(uGo ==2 && cGo ==1){
 			System.out.println("You win!!"); // user wins
                         System.out.println("You choose Paper");
                         System.out.println("I choose Rock");
-			roundStat[r][0]= 1;//1 win for user                       
-                        roundStat[r][4]= 1;//1 lose for computer
-
+                        uWin++; cLose++;
+                        
 		}else if(uGo ==1 && cGo ==2){
 			System.out.println("I'm the winner!!"); // computer wins
                         System.out.println("You choose Rock");
                         System.out.println("I choose Paper");
 			uLife--;
-                        roundStat[r][1]= 1;//lose for user
-                        roundStat[r][3]= 1;//win for computer
-
+                        uLose++; cWin++;
+                        
 		}else if(uGo ==1 && cGo ==3){
 			System.out.println("Rats, you win!!"); // user wins
                         System.out.println("You choose Rock");
                         System.out.println("I choose Scissors");
-                        roundStat[r][0]= 1;//1 win for user                       
-                        roundStat[r][4]= 1;//1 lose for computer
-
+                        uWin++; cLose++;
+                        
 		}else {
 			System.out.println("That's not going to get you anywhere! Quit messing and put in 1/2/3: ");
 			r--; //do not increment i as not a valid turn, still the same round.
-			System.out.println("check round counter " +r);
+			System.out.println("check round counter " +r); //testing 
 
 		} //end if loop
   
         }//end for loop
-                System.out.println("Round info:");
-                // display round stats
-                for (int d = 0; d < r; d++ ){
-                    
-                    for(int g = 0; g<6; g++){
-                    
-                        System.out.println("");
-                        System.out.println("");
-                        System.out.println("");
-                        System.out.println("");
-                        System.out.println("");
-                    }
-                    
+            // display round stats
+            System.out.println("\nRound info:");
+            System.out.println("Number of Rounds: "+r);
+            System.out.println("You won " + uWin +" times.");
+            System.out.println("You lost " + uLose +" times.");
+            System.out.println("I won " + cWin +" times.");
+            System.out.println("I lost " +cLose +" times.");
+            System.out.println("There were "+draws+" draws.");
+            System.out.println("Not bad!!\n");
+            // display shapes
+            System.out.println("Below are the shapes you and I chose:");
+            System.out.println("Yours \t Mine");
+            for(int e = 0; e < r; e++){         
+                System.out.println(shapeStat[e][0] +"\t\t"+ shapeStat[e][1]);
+
+            }
+            // assess game winner
+            if (uWin > cWin){
+                uGameW++;
+                cGameL++;
+            }else{
+                cGameW++;
+                uGameL++;
+            }
+            gameNum--; //-1 game    
+       
+        } //end of while(gameNum>0)
+            while(r>0){
+            System.out.println("\nOk end of game, lets look at the Game stats:"); 
+            System.out.println("The number of games played was " + gameNum);
+            System.out.println("You won " +uGameW+" times.");
+            System.out.println("You lost " +uGameL+" times.");
+            System.out.println("I won " +cGameW+" times.");
+            System.out.println("I lost " +cGameL+" times.");
+                if (uGameW > cGameW){
+                   System.out.println("And you're the winner!");
+               }else{
+                    System.out.println("I win! Not bad!!");
                 }
-        gameNum--; //-1 game
-        } //end of while(gameNum!=0)
-        System.out.println("Ok end of game, lets look at the Game stats:"); 
-             //gameStat = new int[5]; //[number of games,uw,ul,cw,cl]
-             
-         for(int g = 0; g<gameNum; g++ ){
-            System.out.println("The number of games played was "+ gameStat[0]);
-            System.out.println("You won " +gameStat[1]+" times.");
-            System.out.println("You lost " +gameStat[2]+" times.");
-            System.out.println("I won " +gameStat[3]+" times.");
-            System.out.println("I lost " +gameStat[4]+" times.");
-            System.out.println("Not bad!!");
-        } //end of PlayGames()
-    }    
+            }
+           
+    }//end of PlayGames()
 }//end of class

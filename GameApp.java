@@ -29,12 +29,7 @@ public class GameApp{
             while(response.equalsIgnoreCase("y")){
                 // play games
                 myGame.PlayGames();
-                //display stats
-               // myGame.DisplayDetails();
-               //reset arrays()
-
-
-
+              
             }//end while loop
 
             System.out.println("ok, we're done here!");
